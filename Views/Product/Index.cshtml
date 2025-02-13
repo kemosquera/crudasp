@@ -1,0 +1,20 @@
+@model List<MvcCrudApp.Models.Product>
+<h1>ASP.NET</h1>
+<h2>Product List</h2>
+<a href="/Product/Create">Create New Product</a>
+<table border="1">
+    <tr><th>ID</th><th>Name</th><th>Price</th><th>Actions</th></tr>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.Id</td>
+            <td>@product.Name</td>
+            <td>@product.Price</td>
+            <td>
+                <a href="/Product/Details/@product.Id">Details</a> |
+                <a href="/Product/Edit/@product.Id">Edit</a> |
+                <a href="/Product/Delete/@product.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
